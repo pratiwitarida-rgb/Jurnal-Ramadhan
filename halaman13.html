@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Identitas | Jurnal Reflektif Interaktif</title>
+  <title>Refleksi Harian | Jurnal Ramadan</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
   <!-- Font Awesome 6 -->
@@ -27,7 +27,6 @@
       overflow-x: hidden;
     }
 
-    /* Latar belakang ornamen halus */
     .bg-ornament {
       position: fixed;
       top: 0;
@@ -41,7 +40,6 @@
       z-index: 0;
     }
 
-    /* Bintang lembut */
     .star-soft {
       position: absolute;
       background: #8bbf92;
@@ -56,7 +54,6 @@
       100% { opacity: 0.35; transform: translateY(-4px);}
     }
 
-    /* Bulan sabit minimal */
     .crescent-soft {
       position: absolute;
       top: 6%;
@@ -80,7 +77,6 @@
       border-radius: 50%;
     }
 
-    /* Lentera tipis */
     .lantern-soft {
       position: absolute;
       bottom: 5%;
@@ -105,20 +101,18 @@
       100% { transform: rotate(-2deg); }
     }
 
-    /* Kartu identitas */
-    .identity-card {
+    .reflection-page {
       position: relative;
-      max-width: 780px;
+      max-width: 880px;
       width: 100%;
       background: #fffffffa;
       border-radius: 48px;
-      padding: 2.2rem 2rem;
+      padding: 2rem 2rem 2rem;
       box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(120, 150, 110, 0.15);
       transition: all 0.3s ease;
       z-index: 10;
     }
 
-    /* Hiasan atas */
     .card-accent {
       position: absolute;
       top: -10px;
@@ -134,106 +128,186 @@
       border: 1px solid #dde8d6;
     }
 
-    /* Judul */
-    .book-title {
-      text-align: center;
+    h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
+      font-size: 1.9rem;
       font-weight: 700;
       color: #2b5a3a;
-      margin-bottom: 1.8rem;
-      border-bottom: 2px solid #e2eed8;
+      margin: 0.5rem 0 0.8rem;
+      text-align: center;
+    }
+
+    .civic-disposition {
+      background: #f4f9ef;
+      border-radius: 60px;
+      padding: 0.6rem 1.2rem;
       display: inline-block;
       width: auto;
-      padding-bottom: 0.5rem;
-    }
-
-    .title-wrapper {
+      margin: 0 auto 1.8rem;
       text-align: center;
-      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #2b5a3a;
+      border: 1px solid #cbe0c0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
     }
 
-    /* Layout dua kolom untuk foto dan info */
-    .profile-row {
+    .civic-disposition i {
+      margin-right: 8px;
+      color: #5f8b6f;
+    }
+
+    .two-columns {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 1.8rem;
       margin-bottom: 2rem;
-      align-items: center;
-      justify-content: center;
     }
 
-    .photo-area {
-      flex: 0 0 160px;
-      text-align: center;
-    }
-
-    .photo-frame {
-      width: 150px;
-      height: 150px;
-      background: #f4f9ef;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border: 3px solid #cbe0c0;
-      box-shadow: 0 8px 16px -8px rgba(0,0,0,0.05);
-      margin: 0 auto;
-    }
-
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .photo-caption {
-      margin-top: 0.5rem;
-      font-size: 0.75rem;
-      color: #7c9a7c;
-    }
-
-    .info-area {
+    .reflection-col {
       flex: 1;
       min-width: 240px;
+      background: #fefef9;
+      border-radius: 28px;
+      padding: 1.2rem;
+      border: 1px solid #e7f0e0;
+      transition: all 0.2s;
     }
 
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 1rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px dashed #e2eed8;
-    }
-
-    .info-icon {
-      width: 32px;
-      color: #86a788;
-      font-size: 1.2rem;
-      text-align: center;
-      padding-top: 2px;
-    }
-
-    .info-text {
+    .image-col {
       flex: 1;
-      color: #2c5a3c;
-      font-weight: 500;
+      min-width: 240px;
+      background: #fefef9;
+      border-radius: 28px;
+      padding: 1.2rem;
+      border: 1px solid #e7f0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .info-label {
+    .section-subtitle {
+      font-size: 1.2rem;
       font-weight: 600;
-      color: #1f4532;
-      margin-right: 0.5rem;
+      color: #2b5a3a;
+      margin-bottom: 1rem;
+      border-left: 3px solid #bdd4b0;
+      padding-left: 0.75rem;
     }
 
-    /* Tombol navigasi */
+    .section-subtitle i {
+      margin-right: 8px;
+      color: #86a788;
+    }
+
+    .example-ref {
+      background: #f9fdf4;
+      padding: 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: #3c5a46;
+      font-style: italic;
+      margin-bottom: 1rem;
+      border-left: 3px solid #bdd4b0;
+    }
+
+    textarea {
+      width: 100%;
+      border-radius: 24px;
+      border: 1px solid #dde8d6;
+      padding: 0.8rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      background: white;
+      resize: vertical;
+      transition: 0.2s;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #9fc0a4;
+      box-shadow: 0 0 0 2px rgba(95, 139, 111, 0.1);
+    }
+
+    .image-slot {
+      text-align: center;
+      width: 100%;
+    }
+
+    .image-slot img {
+      width: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+      border: 1px solid #e2eed8;
+      max-height: 200px;
+      box-shadow: 0 6px 12px -8px rgba(0,0,0,0.1);
+    }
+
+    .pull-tab-container {
+      margin: 1rem 0 1.5rem;
+      border-radius: 28px;
+      background: #f4f9ef;
+      overflow: hidden;
+      border: 1px solid #e2eed8;
+    }
+
+    .tab-handle {
+      background: #eef3e6;
+      padding: 1rem 1.2rem;
+      font-weight: 600;
+      color: #2b5a3a;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.2s;
+      border-bottom: 1px solid #e2eed8;
+    }
+
+    .tab-handle:hover {
+      background: #e5eedc;
+    }
+
+    .tab-handle i {
+      transition: transform 0.3s;
+    }
+
+    .tab-handle.open i {
+      transform: rotate(180deg);
+    }
+
+    .tab-content {
+      padding: 1rem 1.5rem;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    .tab-content.hidden {
+      display: none;
+    }
+
+    .tab-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2b5a3a;
+      margin: 0.8rem 0 0.5rem;
+    }
+
+    .tab-content ul {
+      margin-left: 1.5rem;
+      color: #3c5a46;
+      line-height: 1.5;
+    }
+
+    .tab-content li {
+      margin: 0.4rem 0;
+    }
+
     .nav-buttons {
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
 
     .btn-nav {
@@ -258,38 +332,26 @@
       transform: translateY(-1px);
     }
 
-    /* Footer */
     .footer-mild {
       text-align: center;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       font-size: 0.7rem;
       color: #9ab694;
     }
 
-    /* Responsif */
-    @media (max-width: 640px) {
+    @media (max-width: 680px) {
       body {
         padding: 1rem;
       }
-      .identity-card {
+      .reflection-page {
         padding: 1.5rem;
       }
-      .book-title {
-        font-size: 1.6rem;
+      h1 {
+        font-size: 1.5rem;
       }
-      .photo-frame {
-        width: 120px;
-        height: 120px;
-      }
-      .info-item {
-        gap: 8px;
-      }
-      .info-icon {
-        width: 28px;
-        font-size: 1rem;
-      }
-      .info-text {
-        font-size: 0.9rem;
+      .civic-disposition {
+        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
       }
     }
   </style>
@@ -301,71 +363,67 @@
   <div class="lantern-soft lantern-soft-right"><i class="fas fa-lantern"></i></div>
   <div id="starsContainer"></div>
 
-  <div class="identity-card">
+  <div class="reflection-page">
     <div class="card-accent">✧ ۞ ✧</div>
 
-    <div class="title-wrapper">
-      <div class="book-title">Jurnal Reflektif Interaktif</div>
-      <div style="font-size: 0.9rem; color: #5f8b6f; margin-top: 0.2rem;">Ramadhan Membentuk Karakter Warga Negara</div>
+    <h1>Aktivitas Kebaikkan – Berbagi kepada Anak Yatim</h1>
+
+    <div style="text-align: center;">
+      <div class="civic-disposition">
+        <i class="fas fa-hand-sparkles"></i> Civic Knowledge: 
+        <strong>Keadilan sosial.</strong>
+      </div>
     </div>
 
-    <div class="profile-row">
-      <div class="photo-area">
-        <div class="photo-frame">
-          <!-- GAMBAR ASLI: menggunakan foto contoh dari Random User API (bisa diganti dengan foto asli) -->
-          <img src="foto.png" alt="Foto Mahasiswa">
+    <div class="two-columns">
+      <!-- Kolom Refleksi -->
+      <div class="reflection-col">
+        <div class="section-subtitle">
+          <i class="fas fa-pen-fancy"></i> Catatan Refleksi
         </div>
-        <div class="photo-caption">Pratiwi Tarida</div>
+        <div class="example-ref" style="text-align: justify;">
+          <i class="fas fa-quote-left" style="margin-right: 6px; color: #86a788;"></i> 
+          “Keluarga saya rutin berbagi dengan anak yatim setiap Ramadhan. Kami datang ke panti asuhan membawa sembako dan uang saku. Melihat senyum dan mendengar doa mereka membuat hati terasa lapang. Kegiatan ini mengajarkan kami bahwa kebahagiaan sejati terletak pada memberi, bukan menerima.”
+        </div>
+        <!-- Teks bantuan di bawah textarea telah dihapus -->
       </div>
 
-      <div class="info-area">
-        <div class="info-item">
-          <div class="info-icon"><i class="fas fa-id-card"></i></div>
-          <div class="info-text"><span class="info-label">Nama:</span> Pratiwi Tarida</div>
+      <!-- Kolom Gambar - hanya gambar tanpa judul atau teks -->
+      <div class="profile-row">
+        <div class="image-slot">
+          <img src="berbagianakyatim.jpeg" 
+        alt="Suasana Ramadan">
         </div>
-        <div class="info-item">
-          <div class="info-icon"><i class="fas fa-qrcode"></i></div>
-          <div class="info-text"><span class="info-label">NIM:</span> 2403348</div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon"><i class="fas fa-chalkboard"></i></div>
-          <div class="info-text"><span class="info-label">Mata Kuliah:</span> Pembelajaran PKN di SD</div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon"><i class="fas fa-user-tie"></i></div>
-          <div class="info-text"><span class="info-label">Dosen Pengampu:</span> Dr. Nurdinah Hanifah, M.Pd.</div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon"><i class="fas fa-university"></i></div>
-          <div class="info-text"><span class="info-label">Program Studi:</span> S1 Pendidikan Guru Sekolah Dasar</div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon"><i class="fas fa-university"></i></div>
-          <div class="info-text"><span class="info-label">Universitas:</span> Universitas Pendidikan Indonesia</div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon"><i class="fas fa-calendar-alt"></i></div>
-          <div class="info-text"><span class="info-label">Tahun Akademik:</span> 2024</div>
-        </div>
+      </div>
+    </div>
+
+    <!-- Elemen Interaktif Pull Tab -->
+    <div class="pull-tab-container" id="pullTabContainer">
+      <div class="tab-handle" id="tabHandle">
+        <span><i class="fas fa-hand-peace"></i> Refleksi Sebagai Calon Pendidik</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="tab-content hidden" id="tabContent" style="text-align: justify;">
+        <ul>
+            Hal ini menunjukkan bahwa keadilan sosial dapat diwujudkan melalui langkah kecil kolektif, setiap individu memiliki peran untuk mengurangi kesenjangan. Nilai ini relevan dengan pembelajaran PKN SD karena guru dapat menanamkan kesadaran berbagi sejak dini, misalnya melalui kegiatan bakti sosial sederhana di sekolah, sehingga siswa belajar bahwa keadilan sosial dimulai dari kepedulian terhadap sesama.
+        </ul>
       </div>
     </div>
 
     <div class="nav-buttons">
-      <a href="#" class="btn-nav" id="backToHome">
+      <a href="halaman3" class="btn-nav" id="backBtn">
         <i class="fas fa-arrow-left"></i> Kembali
       </a>
-      <a href="#" class="btn-nav" id="nextPage">
-        Selanjutnya <i class="fas fa-arrow-right"></i>
+      <a href="" class="btn-nav" id="nextBtn">
+        Lanjut Refleksi <i class="fas fa-arrow-right"></i>
       </a>
     </div>
-
     <div class="footer-mild">
-      <i class="fas fa-star-and-crescent"></i> Semester Genap · Berbasis Civic Competencies
+      <i class="fas fa-star-and-crescent"></i> Jurnal Reflektif · Membangun Karakter Warga Negara
     </div>
   </div>
 
   <script>
-    // Bintang latar
     function createSoftStars() {
       const container = document.getElementById('starsContainer');
       if (!container) return;
@@ -386,9 +444,8 @@
       }
     }
 
-    // Animasi masuk
     function pageEntry() {
-      const card = document.querySelector('.identity-card');
+      const card = document.querySelector('.reflection-page');
       card.style.opacity = '0';
       card.style.transform = 'translateY(18px)';
       setTimeout(() => {
@@ -398,27 +455,36 @@
       }, 40);
     }
 
-    // Navigasi (disesuaikan dengan kebutuhan)
+    function initPullTab() {
+      const handle = document.getElementById('tabHandle');
+      const content = document.getElementById('tabContent');
+      if (!handle || !content) return;
+
+      handle.addEventListener('click', () => {
+        content.classList.toggle('hidden');
+        handle.classList.toggle('open');
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       createSoftStars();
       pageEntry();
+      initPullTab();
 
-      const backBtn = document.getElementById('backToHome');
-      const nextBtn = document.getElementById('nextPage');
+      const backBtn = document.getElementById('backBtn');
+      const nextBtn = document.getElementById('nextBtn');
 
       if (backBtn) {
         backBtn.addEventListener('click', (e) => {
           e.preventDefault();
-          window.location.href = 'halaman1'; // asumsi halaman utama bernama index.html
+          window.location.href = 'halaman12.html';
         });
       }
 
       if (nextBtn) {
         nextBtn.addEventListener('click', (e) => {
           e.preventDefault();
-          window.location.href = 'halaman3';
-          // Di sini bisa diarahkan ke halaman jurnal berikutnya
-          // window.location.href = 'jurnal.html';
+          window.location.href = 'halaman14.html';
         });
       }
     });

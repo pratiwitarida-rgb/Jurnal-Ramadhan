@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Refleksi Harian | Jurnal Ramadan</title>
+  <title>Refleksi Harian | Jurnal Ramadan - Dua Gambar Inspiratif</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
   <!-- Font Awesome 6 -->
@@ -103,7 +103,7 @@
 
     .reflection-page {
       position: relative;
-      max-width: 880px;
+      max-width: 960px;
       width: 100%;
       background: #fffffffa;
       border-radius: 48px;
@@ -182,8 +182,10 @@
       padding: 1.2rem;
       border: 1px solid #e7f0e0;
       display: flex;
+      flex-direction: column;
+      gap: 1rem;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .section-subtitle {
@@ -211,27 +213,10 @@
       border-left: 3px solid #bdd4b0;
     }
 
-    textarea {
-      width: 100%;
-      border-radius: 24px;
-      border: 1px solid #dde8d6;
-      padding: 0.8rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      background: white;
-      resize: vertical;
-      transition: 0.2s;
-    }
-
-    textarea:focus {
-      outline: none;
-      border-color: #9fc0a4;
-      box-shadow: 0 0 0 2px rgba(95, 139, 111, 0.1);
-    }
-
+    /* Gaya untuk kontainer gambar */
     .image-slot {
-      text-align: center;
       width: 100%;
+      text-align: center;
     }
 
     .image-slot img {
@@ -239,9 +224,16 @@
       border-radius: 24px;
       object-fit: cover;
       border: 1px solid #e2eed8;
-      max-height: 200px;
       box-shadow: 0 6px 12px -8px rgba(0,0,0,0.1);
+      max-height: 180px;
+      transition: transform 0.2s ease;
     }
+    
+    .image-slot img:hover {
+      transform: scale(1.01);
+    }
+    
+    /* jarak antar gambar ditangani oleh gap pada .image-col */
 
     .pull-tab-container {
       margin: 1rem 0 1.5rem;
@@ -353,6 +345,9 @@
         font-size: 0.8rem;
         padding: 0.4rem 1rem;
       }
+      .image-slot img {
+        max-height: 150px;
+      }
     }
   </style>
 </head>
@@ -366,51 +361,56 @@
   <div class="reflection-page">
     <div class="card-accent">✧ ۞ ✧</div>
 
-    <h1>Aktivitas Ibadah – Tadarus</h1>
+    <h1>Implentasi Media Pembelajaran - Kisah Nabi Nuh</h1>
 
     <div style="text-align: center;">
       <div class="civic-disposition">
-        <i class="fas fa-hand-sparkles"></i> Civic Disposition: 
-        <strong>Disiplin, Komitmen, Tanggung Jawab terhadap Diri Sendiri</strong>
+        <i class="fas fa-hand-sparkles"></i> Civic Knowledge: 
+        <strong>Keteladanan Nilai Tokoh</strong>
       </div>
     </div>
 
     <div class="two-columns">
-      <!-- Kolom Refleksi -->
+      <!-- Kolom Refleksi (tanpa textarea, sesuai kode asli) -->
       <div class="reflection-col">
         <div class="section-subtitle">
           <i class="fas fa-pen-fancy"></i> Catatan Refleksi
         </div>
-        <div class="example-ref">
+        <div class="example-ref" >
           <i class="fas fa-quote-left" style="margin-right: 6px; color: #86a788;"></i> 
-          “Saya memutuskan untuk membiasakan tadarus satu juz setiap hari dengan cara menjadwalkannya setelah salat subuh, karena waktu itu paling tenang dan belum banyak aktivitas. Agar konsisten, saya akan mencatat progres harian dan mengaitkan kebiasaan ini dengan rutinitas yang sudah ada. Targetnya bukan hanya menyelesaikan bacaan, tetapi juga membangun disiplin dan ketenangan batin secara bertahap.”
+          "Bersama rekan satu kelompok yang berisi 4 orang, kami mengimplementasikan media pembelajaran berupa aplikasi ARKANUH. Siswa sangat antusias saat belajar mengenai cerita tentang Nabi Nuh yang berdakwah selama 950 tahun dengan penuh kesabaran, meskipun kaumnya mengejek."
         </div>
-        <!-- Teks bantuan di bawah textarea telah dihapus -->
       </div>
 
-      <!-- Kolom Gambar - hanya gambar tanpa judul atau teks -->
-      <div class="profile-row">
+      <!-- Kolom Gambar: menampilkan DUA gambar (gambar utama + gambar tambahan di bawahnya) -->
+      <div class="image-col">
+        <!-- Gambar pertama (utuh suasana tadarus / refleksi) -->
         <div class="image-slot">
-          <img src="tadarus.jpg" 
-        alt="Suasana Ramadan">
+          <img 
+            src="sd1.jpeg" 
+            alt="Membaca Al-Qur'an di bulan Ramadan - suasana tenang dan khusyuk"
+            loading="lazy">
         </div>
+        <!-- Gambar kedua (tambahan: kebersamaan dan semangat berbagi) - DITAMBAHKAN DI BAWAH GAMBAR YANG SUDAH ADA -->
+        <div class="image-slot">
+          <img 
+            src="sd2.jpeg" 
+            alt="Berbagi takjil dan kebersamaan di bulan Ramadan - nilai sosial"
+            loading="lazy">
+        </div>
+        <!-- Catatan: dua gambar tersusun vertikal dengan jarak rapi sesuai gap pada .image-col -->
       </div>
     </div>
 
-    <!-- Elemen Interaktif Pull Tab -->
+    <!-- Elemen Interaktif Pull Tab (tips konsistensi) -->
     <div class="pull-tab-container" id="pullTabContainer">
       <div class="tab-handle" id="tabHandle">
-        <span><i class="fas fa-hand-peace"></i> Tips Konsistensi</span>
+        <span><i class="fas fa-hand-peace"></i> Relevansi dengan Pendidikan PKN SD</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="tab-content hidden" id="tabContent">
-        <h4><i class="fas fa-lightbulb"></i> Tips Menjaga Konsistensi</h4>
+      <div class="tab-content hidden" id="tabContent" style="text-align: justify;">
         <ul>
-          <li>📌 Buat checklist harian & tempel di tempat yang terlihat</li>
-          <li>📌 Mulai dari target kecil, lalu tingkatkan secara bertahap</li>
-          <li>📌 Gunakan alarm pengingat untuk waktu ibadah</li>
-          <li>📌 Ajak keluarga atau teman untuk saling mengingatkan</li>
-          <li>📌 Tulis refleksi harian agar lebih termotivasi</li>
+            Melalui kegiatan implementasi, siswa SD diajak untuk meneladani nilai-nilai luhur tokoh, terutama kesabaran yang ditunjukkan Nabi Nuh selama berdakwah 950 tahun tanpa mengenal putus asa, meskipun menghadapi ejekan dan penolakan dari kaumnya. Nilai kesabaran ini kemudian dihubungkan dengan civic disposition dalam PKN SD, seperti ketekunan menjalankan kewajiban, tanggung jawab, serta keteguhan hati dalam memperjuangkan kebenaran, sikap yang sangat relevan dengan pengamalan sila pertama (Ketuhanan Yang Maha Esa) dan sila kedua (Kemanusiaan yang Adil dan Beradab) dalam Pancasila. Dalam proses diskusi setelah bercerita, siswa tidak hanya menyerap pengetahuan bahwa kesabaran adalah bagian dari karakter warga negara yang baik (civic knowledge), tetapi juga terlatih untuk mengemukakan pendapat, mendengarkan teman, dan mengambil hikmah dari pengalaman sehari-hari seperti sabar belajar, sabar menunggu giliran, atau sabar menghadapi perbedaan (civic skills). Dengan demikian, meneladani sosok Nabi Nuh tidak sekadar menjadi cerita religius, tetapi bertransformasi menjadi pembelajaran kontekstual kewarganegaraan yang membentuk siswa SD.
         </ul>
       </div>
     </div>
@@ -429,6 +429,7 @@
   </div>
 
   <script>
+    // Membuat bintang lembut latar belakang
     function createSoftStars() {
       const container = document.getElementById('starsContainer');
       if (!container) return;
@@ -449,17 +450,21 @@
       }
     }
 
+    // Animasi awal kemunculan card
     function pageEntry() {
       const card = document.querySelector('.reflection-page');
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(18px)';
-      setTimeout(() => {
-        card.style.transition = 'all 0.65s cubic-bezier(0.2, 0.85, 0.3, 1)';
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }, 40);
+      if (card) {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(18px)';
+        setTimeout(() => {
+          card.style.transition = 'all 0.65s cubic-bezier(0.2, 0.85, 0.3, 1)';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 40);
+      }
     }
 
+    // Pull tab interaktif (tips)
     function initPullTab() {
       const handle = document.getElementById('tabHandle');
       const content = document.getElementById('tabContent');
@@ -471,10 +476,23 @@
       });
     }
 
+    // Fallback jika gambar error (tetap menampilkan placeholder elegan)
+    function handleImageErrors() {
+      const images = document.querySelectorAll('.image-slot img');
+      images.forEach(img => {
+        img.addEventListener('error', function(e) {
+          // Jika gambar gagal dimuat, ganti dengan background data-uri atau ikon yang lembut
+          this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23eef3e6'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='%234b7a5c' text-anchor='middle' dy='.3em'%3E🌙 Suasana Ramadan%3C/text%3E%3C/svg%3E";
+          this.style.objectFit = 'cover';
+        });
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       createSoftStars();
       pageEntry();
       initPullTab();
+      handleImageErrors();
 
       const backBtn = document.getElementById('backBtn');
       const nextBtn = document.getElementById('nextBtn');
@@ -482,18 +500,20 @@
       if (backBtn) {
         backBtn.addEventListener('click', (e) => {
           e.preventDefault();
-          window.location.href = 'halaman3';
+          // simulasi navigasi kembali (arahkan ke halaman3 seperti yang diinginkan)
+          window.location.href = 'halaman13.html';
         });
       }
 
       if (nextBtn) {
         nextBtn.addEventListener('click', (e) => {
           e.preventDefault();
-          window.location.href = 'halaman5';
+          window.location.href = 'halaman15.html';
         });
       }
     });
 
+    // Resize handler untuk memperbarui bintang jika layar berubah drastis
     let resizeTimer;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);

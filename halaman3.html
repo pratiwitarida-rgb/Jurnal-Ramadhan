@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Refleksi Harian | Jurnal Ramadan</title>
+  <title>Kata Pengantar | Jurnal Reflektif Interaktif</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
   <!-- Font Awesome 6 -->
@@ -27,6 +27,7 @@
       overflow-x: hidden;
     }
 
+    /* Latar belakang ornamen halus */
     .bg-ornament {
       position: fixed;
       top: 0;
@@ -40,6 +41,7 @@
       z-index: 0;
     }
 
+    /* Bintang lembut */
     .star-soft {
       position: absolute;
       background: #8bbf92;
@@ -54,6 +56,7 @@
       100% { opacity: 0.35; transform: translateY(-4px);}
     }
 
+    /* Bulan sabit minimal */
     .crescent-soft {
       position: absolute;
       top: 6%;
@@ -77,6 +80,7 @@
       border-radius: 50%;
     }
 
+    /* Lentera tipis */
     .lantern-soft {
       position: absolute;
       bottom: 5%;
@@ -101,18 +105,20 @@
       100% { transform: rotate(-2deg); }
     }
 
-    .reflection-page {
+    /* Kartu utama */
+    .intro-card {
       position: relative;
-      max-width: 880px;
+      max-width: 780px;
       width: 100%;
       background: #fffffffa;
       border-radius: 48px;
-      padding: 2rem 2rem 2rem;
+      padding: 2.2rem 2rem;
       box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(120, 150, 110, 0.15);
       transition: all 0.3s ease;
       z-index: 10;
     }
 
+    /* Hiasan atas */
     .card-accent {
       position: absolute;
       top: -10px;
@@ -128,186 +134,46 @@
       border: 1px solid #dde8d6;
     }
 
-    h1 {
+    /* Judul */
+    .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.9rem;
+      font-size: 1.8rem;
       font-weight: 700;
       color: #2b5a3a;
-      margin: 0.5rem 0 0.8rem;
-      text-align: center;
+      margin-bottom: 1rem;
+      border-left: 4px solid #bdd4b0;
+      padding-left: 1rem;
     }
 
-    .civic-disposition {
-      background: #f4f9ef;
-      border-radius: 60px;
-      padding: 0.6rem 1.2rem;
-      display: inline-block;
-      width: auto;
-      margin: 0 auto 1.8rem;
-      text-align: center;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #2b5a3a;
-      border: 1px solid #cbe0c0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-    }
-
-    .civic-disposition i {
-      margin-right: 8px;
-      color: #5f8b6f;
-    }
-
-    .two-columns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.8rem;
+    .content-block {
       margin-bottom: 2rem;
     }
 
-    .reflection-col {
-      flex: 1;
-      min-width: 240px;
-      background: #fefef9;
-      border-radius: 28px;
-      padding: 1.2rem;
-      border: 1px solid #e7f0e0;
-      transition: all 0.2s;
-    }
-
-    .image-col {
-      flex: 1;
-      min-width: 240px;
-      background: #fefef9;
-      border-radius: 28px;
-      padding: 1.2rem;
-      border: 1px solid #e7f0e0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .section-subtitle {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #2b5a3a;
-      margin-bottom: 1rem;
-      border-left: 3px solid #bdd4b0;
-      padding-left: 0.75rem;
-    }
-
-    .section-subtitle i {
-      margin-right: 8px;
-      color: #86a788;
-    }
-
-    .example-ref {
-      background: #f9fdf4;
-      padding: 0.8rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      color: #3c5a46;
-      font-style: italic;
-      margin-bottom: 1rem;
-      border-left: 3px solid #bdd4b0;
-    }
-
-    textarea {
-      width: 100%;
-      border-radius: 24px;
-      border: 1px solid #dde8d6;
-      padding: 0.8rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      background: white;
-      resize: vertical;
-      transition: 0.2s;
-    }
-
-    textarea:focus {
-      outline: none;
-      border-color: #9fc0a4;
-      box-shadow: 0 0 0 2px rgba(95, 139, 111, 0.1);
-    }
-
-    .image-slot {
-      text-align: center;
-      width: 100%;
-    }
-
-    .image-slot img {
-      width: 100%;
-      border-radius: 24px;
-      object-fit: cover;
-      border: 1px solid #e2eed8;
-      max-height: 200px;
-      box-shadow: 0 6px 12px -8px rgba(0,0,0,0.1);
-    }
-
-    .pull-tab-container {
-      margin: 1rem 0 1.5rem;
-      border-radius: 28px;
-      background: #f4f9ef;
-      overflow: hidden;
-      border: 1px solid #e2eed8;
-    }
-
-    .tab-handle {
-      background: #eef3e6;
-      padding: 1rem 1.2rem;
-      font-weight: 600;
-      color: #2b5a3a;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: background 0.2s;
-      border-bottom: 1px solid #e2eed8;
-    }
-
-    .tab-handle:hover {
-      background: #e5eedc;
-    }
-
-    .tab-handle i {
-      transition: transform 0.3s;
-    }
-
-    .tab-handle.open i {
-      transform: rotate(180deg);
-    }
-
-    .tab-content {
-      padding: 1rem 1.5rem;
-      transition: all 0.3s ease;
-      background: white;
-    }
-
-    .tab-content.hidden {
-      display: none;
-    }
-
-    .tab-content h4 {
+    .content-text {
       font-size: 1rem;
-      font-weight: 700;
-      color: #2b5a3a;
-      margin: 0.8rem 0 0.5rem;
-    }
-
-    .tab-content ul {
-      margin-left: 1.5rem;
+      line-height: 1.6;
       color: #3c5a46;
-      line-height: 1.5;
+      text-align: justify;
+      margin-bottom: 1rem;
     }
 
-    .tab-content li {
-      margin: 0.4rem 0;
+    .quote {
+      font-style: italic;
+      background: #f4f9ef;
+      padding: 1rem 1.5rem;
+      border-radius: 24px;
+      color: #2b5a3a;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+      border-left: 3px solid #9fc0a4;
     }
 
+    /* Tombol navigasi */
     .nav-buttons {
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
     }
 
     .btn-nav {
@@ -332,26 +198,27 @@
       transform: translateY(-1px);
     }
 
+    /* Footer */
     .footer-mild {
       text-align: center;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
       font-size: 0.7rem;
       color: #9ab694;
     }
 
-    @media (max-width: 680px) {
+    /* Responsif */
+    @media (max-width: 640px) {
       body {
         padding: 1rem;
       }
-      .reflection-page {
+      .intro-card {
         padding: 1.5rem;
       }
-      h1 {
+      .section-title {
         font-size: 1.5rem;
       }
-      .civic-disposition {
-        font-size: 0.8rem;
-        padding: 0.4rem 1rem;
+      .content-text {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -363,67 +230,55 @@
   <div class="lantern-soft lantern-soft-right"><i class="fas fa-lantern"></i></div>
   <div id="starsContainer"></div>
 
-  <div class="reflection-page">
+  <div class="intro-card">
     <div class="card-accent">✧ ۞ ✧</div>
 
-    <h1>Aktivitas Ibadah – Taraweh</h1>
-
-    <div style="text-align: center;">
-      <div class="civic-disposition">
-        <i class="fas fa-hand-sparkles"></i> Civic Disposition: 
-        <strong>Disiplin, Komitmen, Tanggung Jawab terhadap Diri Sendiri</strong>
+    <div class="content-block">
+      <div class="section-title">Kata Pengantar</div>
+      <div class="content-text">
+        Alhamdulillah, puji syukur ke hadirat Allah Swt. yang telah memberikan kesempatan kepada saya untuk menyusun jurnal reflektif interaktif ini. Bulan Ramadhan yang penuh berkah menjadi momentum tepat untuk merenungkan nilai-nilai kebangsaan, keimanan, dan kepedulian sosial. Jurnal ini dirancang sebagai media refleksi bagi calon guru SD dalam mengintegrasikan nilai-nilai civic competencies (kompetensi kewarganegaraan) dengan pengalaman spiritual selama bulan suci.
+      </div>
+      <div class="content-text">
+        Saya mengucapkan terima kasih kepada dosen pengampu dan semua pihak yang telah mendukung tersusunnya jurnal ini. Semoga jurnal ini dapat menjadi sarana pengembangan karakter warga negara yang religius, nasionalis, dan berkeadaban.
       </div>
     </div>
 
-    <div class="two-columns">
-      <!-- Kolom Refleksi -->
-      <div class="reflection-col">
-        <div class="section-subtitle">
-          <i class="fas fa-pen-fancy"></i> Catatan Refleksi
-        </div>
-        <div class="example-ref">
-          <i class="fas fa-quote-left" style="margin-right: 6px; color: #86a788;"></i> 
-          "Setiap malam Ramadhan, saya melaksanakan salat tarawih berjamaah di masjid dekat rumah. Suasana terasa khusyuk dengan lantunan ayat-ayat suci yang dibacakan imam. Selain menunaikan ibadah, momen ini juga menjadi ajang silaturahmi dengan tetangga dan teman-teman yang jarang bertemu di hari biasa."
-        </div>
-        <!-- Teks bantuan di bawah textarea telah dihapus -->
+    <div class="content-block">
+      <div class="section-title">Tujuan</div>
+      <div class="content-text">
+        Jurnal Reflektif Interaktif ini bertujuan untuk:
       </div>
-
-      <!-- Kolom Gambar - hanya gambar tanpa judul atau teks -->
-      <div class="profile-row">
-        <div class="image-slot">
-          <img src="masjid.png" 
-        alt="Suasana Ramadan">
-        </div>
+      <div class="quote">
+        <i class="fas fa-check-circle" style="color: #5f8b6f; margin-right: 8px;"></i> 1. Membantu calon guru SD merefleksikan nilai-nilai karakter kebangsaan selama bulan Ramadhan.<br>
+        <i class="fas fa-check-circle" style="color: #5f8b6f; margin-right: 8px;"></i> 2. Menghubungkan pengalaman ibadah puasa dengan pembentukan kompetensi kewarganegaraan (civic competencies).<br>
+        <i class="fas fa-check-circle" style="color: #5f8b6f; margin-right: 8px;"></i> 3. Menyediakan ruang reflektif yang interaktif untuk mengembangkan kepribadian guru yang profesional dan berakhlak mulia.<br>
+        <i class="fas fa-check-circle" style="color: #5f8b6f; margin-right: 8px;"></i> 4. Menginspirasi pembelajaran PKN di SD yang kontekstual dan berbasis nilai-nilai Ramadan.
       </div>
     </div>
 
-    <!-- Elemen Interaktif Pull Tab -->
-    <div class="pull-tab-container" id="pullTabContainer">
-      <div class="tab-handle" id="tabHandle">
-        <span><i class="fas fa-hand-peace"></i> Relevansi dalam Pembelajaran PKN SD</span>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <div class="tab-content hidden" id="tabContent" style="text-align: justify;">
-        <ul>
-            Tarawih dapat menjadi contoh konkret bagi siswa SD tentang pentingnya berpartisipasi dalam kegiatan keagamaan sebagai wujud pengamalan sila pertama Pancasila (Ketuhanan Yang Maha Esa) sekaligus melatih keterampilan sosial seperti kerja sama, musyawarah, dan kepedulian. Guru dapat mengajak siswa untuk menceritakan pengalaman Tarawih mereka sebagai bahan diskusi kelas tentang keberagaman ibadah di masyarakat.
-        </ul>
+    <div class="content-block">
+      <div class="section-title">Isi Buku</div>
+      <div class="content-text">
+        Jurnal ini dirancang sebagai satu kesatuan pengalaman yang utuh, dimulai dengan Refleksi Harian Ramadan berupa lembar refleksi yang mendorong calon guru untuk secara mendalam menuliskan pengalaman spiritual mereka dan mengkaitkannya dengan penguatan karakter warga negara seperti kejujuran, kedisiplinan, empati, dan tanggung jawab, yang kemudian dilanjutkan dengan Aktivitas Civic Competencies melalui berbagai kegiatan interaktif berbasis masyarakat seperti aksi sosial, diskusi kelompok, dan pengamatan fenomena sosial selama Ramadan, sehingga pengalaman spiritual personal dapat diimplementasikan secara nyata dalam kehidupan bermasyarakat.
       </div>
     </div>
 
     <div class="nav-buttons">
-      <a href="halaman3" class="btn-nav" id="backBtn">
+      <a href="halaman1" class="btn-nav" id="backToIdentity">
         <i class="fas fa-arrow-left"></i> Kembali
       </a>
-      <a href="" class="btn-nav" id="nextBtn">
-        Lanjut Refleksi <i class="fas fa-arrow-right"></i>
+      <a href="#" class="btn-nav" id="nextToJournal">
+        Mulai Jurnal <i class="fas fa-arrow-right"></i>
       </a>
     </div>
+
     <div class="footer-mild">
-      <i class="fas fa-star-and-crescent"></i> Jurnal Reflektif · Membangun Karakter Warga Negara
+      <i class="fas fa-star-and-crescent"></i> Ramadan 1447 H · Refleksi & Kompetensi Kewarganegaraan
     </div>
   </div>
 
   <script>
+    // Bintang latar
     function createSoftStars() {
       const container = document.getElementById('starsContainer');
       if (!container) return;
@@ -444,8 +299,9 @@
       }
     }
 
+    // Animasi masuk
     function pageEntry() {
-      const card = document.querySelector('.reflection-page');
+      const card = document.querySelector('.intro-card');
       card.style.opacity = '0';
       card.style.transform = 'translateY(18px)';
       setTimeout(() => {
@@ -455,36 +311,27 @@
       }, 40);
     }
 
-    function initPullTab() {
-      const handle = document.getElementById('tabHandle');
-      const content = document.getElementById('tabContent');
-      if (!handle || !content) return;
-
-      handle.addEventListener('click', () => {
-        content.classList.toggle('hidden');
-        handle.classList.toggle('open');
-      });
-    }
-
     document.addEventListener('DOMContentLoaded', () => {
       createSoftStars();
       pageEntry();
-      initPullTab();
 
-      const backBtn = document.getElementById('backBtn');
-      const nextBtn = document.getElementById('nextBtn');
+      const backBtn = document.getElementById('backToIdentity');
+      const nextBtn = document.getElementById('nextToJournal');
 
       if (backBtn) {
         backBtn.addEventListener('click', (e) => {
           e.preventDefault();
-          window.location.href = 'halaman4';
+          // Kembali ke halaman identitas (asumsi nama file identitas.html)
+          window.location.href = 'halaman2.html';
         });
       }
 
       if (nextBtn) {
         nextBtn.addEventListener('click', (e) => {
           e.preventDefault();
-          window.location.href = 'halaman6';
+          alert("Halaman jurnal harian akan segera hadir. Selamat merefleksikan!");
+          // Di sini bisa diarahkan ke halaman jurnal berikutnya
+          window.location.href = 'halaman4.html';
         });
       }
     });

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Refleksi Harian | Jurnal Ramadan</title>
+  <title>Refleksi Harian | Jurnal Ramadan - Dua Gambar Inspiratif</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
   <!-- Font Awesome 6 -->
@@ -103,7 +103,7 @@
 
     .reflection-page {
       position: relative;
-      max-width: 880px;
+      max-width: 960px;
       width: 100%;
       background: #fffffffa;
       border-radius: 48px;
@@ -182,8 +182,10 @@
       padding: 1.2rem;
       border: 1px solid #e7f0e0;
       display: flex;
+      flex-direction: column;
+      gap: 1rem;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .section-subtitle {
@@ -211,27 +213,10 @@
       border-left: 3px solid #bdd4b0;
     }
 
-    textarea {
-      width: 100%;
-      border-radius: 24px;
-      border: 1px solid #dde8d6;
-      padding: 0.8rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      background: white;
-      resize: vertical;
-      transition: 0.2s;
-    }
-
-    textarea:focus {
-      outline: none;
-      border-color: #9fc0a4;
-      box-shadow: 0 0 0 2px rgba(95, 139, 111, 0.1);
-    }
-
+    /* Gaya untuk kontainer gambar */
     .image-slot {
-      text-align: center;
       width: 100%;
+      text-align: center;
     }
 
     .image-slot img {
@@ -239,9 +224,16 @@
       border-radius: 24px;
       object-fit: cover;
       border: 1px solid #e2eed8;
-      max-height: 200px;
       box-shadow: 0 6px 12px -8px rgba(0,0,0,0.1);
+      max-height: 180px;
+      transition: transform 0.2s ease;
     }
+    
+    .image-slot img:hover {
+      transform: scale(1.01);
+    }
+    
+    /* jarak antar gambar ditangani oleh gap pada .image-col */
 
     .pull-tab-container {
       margin: 1rem 0 1.5rem;
@@ -353,6 +345,9 @@
         font-size: 0.8rem;
         padding: 0.4rem 1rem;
       }
+      .image-slot img {
+        max-height: 150px;
+      }
     }
   </style>
 </head>
@@ -366,18 +361,57 @@
   <div class="reflection-page">
     <div class="card-accent">✧ ۞ ✧</div>
 
-    <h1>Refleksi Penutup – Pembelajaran Karakter yang Diperoleh</h1>
+    <h1>Gotong Royong - Keterampilan Kewarganegaraan</h1>
+
+    <div style="text-align: center;">
+      <div class="civic-disposition">
+        <i class="fas fa-hand-sparkles"></i> Civic Skills: 
+        <strong>Kolaborasi dan Musyawarah.</strong>
+      </div>
+    </div>
 
     <div class="two-columns">
-      <!-- Kolom Refleksi -->
+      <!-- Kolom Refleksi (tanpa textarea, sesuai kode asli) -->
       <div class="reflection-col">
         <div class="section-subtitle">
+          <i class="fas fa-pen-fancy"></i> Catatan Refleksi
         </div>
-        <div class="example-ref" style="text-align: justify;">
+        <div class="example-ref" >
           <i class="fas fa-quote-left" style="margin-right: 6px; color: #86a788;"></i> 
-          "Selama Ramadhan, saya memperoleh tiga kompetensi kewarganegaraan yang utuh. Civic knowledge saya berkembang dengan memahami bahwa puasa mengandung dimensi sosial—tradisi berbagi takjil dan gotong royong di lingkungan sekitar rumah, sementara Nuzulul Qur’an mengajarkan pentingnya ilmu dan Lailatul Qadar menanamkan keyakinan bahwa kebaikan sekecil apa pun berdampak besar. Civic skills saya asah melalui komunikasi dengan warga, kolaborasi dalam kegiatan sosial, serta kemampuan musyawarah saat mengatur buka bersama. Semua keterampilan ini menjadi modal saya menciptakan kelas yang inklusif dan demokratis kelak. Civic disposition terbentuk dari disiplin bangun sahur, empati karena merasakan lapar, tanggung jawab menjaga lingkungan ibadah, serta kejujuran menahan lisan. Ketiga kompetensi ini (pengetahuan, keterampilan, dan watak) saling menguatkan dan akan saya integrasikan dalam pembelajaran PKN SD, karena menjadi warga negara yang baik tidak cukup hanya tahu, tetapi juga harus mampu dan mau bertindak nyata."
+          “Di bulan Ramadhan ini, saya bersama warga RT 03 mengadakan kerja bakti rutin setiap Jum'at pagi. Kegiatan ini tidak hanya membersihkan lingkungan, tetapi juga menjadi ajang mempererat silaturahmi. Sebelum bekerja, kami selalu mengadakan musyawarah untuk menentukan bagian mana yang dibersihkan hari ini dan pembagian tugas. Semua pendapat didengar, dan keputusan diambil bersama."
         </div>
-        <!-- Teks bantuan di bawah textarea telah dihapus -->
+      </div>
+
+      <!-- Kolom Gambar: menampilkan DUA gambar (gambar utama + gambar tambahan di bawahnya) -->
+      <div class="image-col">
+        <!-- Gambar pertama (utuh suasana tadarus / refleksi) -->
+        <div class="image-slot">
+          <img 
+            src="jumsih1.jpeg" 
+            alt="Membaca Al-Qur'an di bulan Ramadan - suasana tenang dan khusyuk"
+            loading="lazy">
+        </div>
+        <!-- Gambar kedua (tambahan: kebersamaan dan semangat berbagi) - DITAMBAHKAN DI BAWAH GAMBAR YANG SUDAH ADA -->
+        <div class="image-slot">
+          <img 
+            src="jumsih2.jpeg" 
+            alt="Berbagi takjil dan kebersamaan di bulan Ramadan - nilai sosial"
+            loading="lazy">
+        </div>
+        <!-- Catatan: dua gambar tersusun vertikal dengan jarak rapi sesuai gap pada .image-col -->
+      </div>
+    </div>
+
+    <!-- Elemen Interaktif Pull Tab (tips konsistensi) -->
+    <div class="pull-tab-container" id="pullTabContainer">
+      <div class="tab-handle" id="tabHandle">
+        <span><i class="fas fa-hand-peace"></i> Relevansi dengan Pendidikan PKN SD</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="tab-content hidden" id="tabContent" style="text-align: justify;">
+        <ul>
+            Nilai gotong royong ini sangat relevan dengan pembelajaran PKN SD karena sejak dini siswa perlu dibiasakan bekerja dalam kelompok, menghargai pendapat teman, dan menyelesaikan konflik melalui diskusi. Guru dapat menggunakan contoh kerja bakti di lingkungan sebagai model nyata terciptanya masyarakat yang harmonis. Untuk memperkuat interaktivitas, halaman ini dilengkapi dengan mini activity stiker bertema kolaborasi, ilustrasi atau foto dokumentasi kegiatan, serta QR code yang berisi video wawancara warga tentang pentingnya gotong royong. Ramadhan menjadi momen ideal menanamkan nilai-nilai kebersamaan dan kepedulian sosial yang menjadi inti dari civic skills.
+        </ul>
       </div>
     </div>
 
@@ -395,6 +429,7 @@
   </div>
 
   <script>
+    // Membuat bintang lembut latar belakang
     function createSoftStars() {
       const container = document.getElementById('starsContainer');
       if (!container) return;
@@ -415,17 +450,21 @@
       }
     }
 
+    // Animasi awal kemunculan card
     function pageEntry() {
       const card = document.querySelector('.reflection-page');
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(18px)';
-      setTimeout(() => {
-        card.style.transition = 'all 0.65s cubic-bezier(0.2, 0.85, 0.3, 1)';
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }, 40);
+      if (card) {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(18px)';
+        setTimeout(() => {
+          card.style.transition = 'all 0.65s cubic-bezier(0.2, 0.85, 0.3, 1)';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 40);
+      }
     }
 
+    // Pull tab interaktif (tips)
     function initPullTab() {
       const handle = document.getElementById('tabHandle');
       const content = document.getElementById('tabContent');
@@ -437,10 +476,23 @@
       });
     }
 
+    // Fallback jika gambar error (tetap menampilkan placeholder elegan)
+    function handleImageErrors() {
+      const images = document.querySelectorAll('.image-slot img');
+      images.forEach(img => {
+        img.addEventListener('error', function(e) {
+          // Jika gambar gagal dimuat, ganti dengan background data-uri atau ikon yang lembut
+          this.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23eef3e6'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='%234b7a5c' text-anchor='middle' dy='.3em'%3E🌙 Suasana Ramadan%3C/text%3E%3C/svg%3E";
+          this.style.objectFit = 'cover';
+        });
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       createSoftStars();
       pageEntry();
       initPullTab();
+      handleImageErrors();
 
       const backBtn = document.getElementById('backBtn');
       const nextBtn = document.getElementById('nextBtn');
@@ -448,18 +500,20 @@
       if (backBtn) {
         backBtn.addEventListener('click', (e) => {
           e.preventDefault();
-          window.location.href = 'halaman17';
+          // simulasi navigasi kembali (arahkan ke halaman3 seperti yang diinginkan)
+          window.location.href = 'halaman11.html';
         });
       }
 
       if (nextBtn) {
         nextBtn.addEventListener('click', (e) => {
           e.preventDefault();
-          window.location.href = 'halaman19';
+          window.location.href = 'halaman13.html';
         });
       }
     });
 
+    // Resize handler untuk memperbarui bintang jika layar berubah drastis
     let resizeTimer;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
