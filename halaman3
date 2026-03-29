@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Kata Pengantar | Jurnal Reflektif Interaktif</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(125deg, #fafef7 0%, #eef3e6 100%);
+      font-family: 'Inter', sans-serif;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    /* Latar belakang ornamen halus */
+    .bg-ornament {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" opacity="0.04"><path fill="none" stroke="%234b7a5c" stroke-width="0.6" d="M200 200 L1000 200 M200 400 L1000 400 M200 600 L1000 600 M200 800 L1000 800 M400 200 L400 1000 M600 200 L600 1000 M800 200 L800 1000"/><circle cx="600" cy="600" r="180" fill="none" stroke="%234b7a5c" stroke-width="0.5"/></svg>');
+      background-repeat: repeat;
+      background-size: 80px;
+      z-index: 0;
+    }
+
+    /* Bintang lembut */
+    .star-soft {
+      position: absolute;
+      background: #8bbf92;
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: gentleFloat 5s infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes gentleFloat {
+      0% { opacity: 0.1; transform: translateY(0px);}
+      100% { opacity: 0.35; transform: translateY(-4px);}
+    }
+
+    /* Bulan sabit minimal */
+    .crescent-soft {
+      position: absolute;
+      top: 6%;
+      right: 5%;
+      width: 90px;
+      height: 90px;
+      background: radial-gradient(circle at 35% 35%, #e4f0dc, #cae0bc);
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(100, 140, 90, 0.2);
+      z-index: 1;
+      opacity: 0.7;
+    }
+    .crescent-soft::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      width: 72px;
+      height: 72px;
+      background: #fafef7;
+      border-radius: 50%;
+    }
+
+    /* Lentera tipis */
+    .lantern-soft {
+      position: absolute;
+      bottom: 5%;
+      left: 3%;
+      font-size: 2.2rem;
+      color: #9fc0a4;
+      filter: drop-shadow(0 0 4px rgba(100, 120, 80, 0.3));
+      animation: softSwing 6s ease-in-out infinite;
+      transform-origin: top center;
+      z-index: 1;
+      opacity: 0.6;
+    }
+    .lantern-soft-right {
+      left: auto;
+      right: 3%;
+      bottom: 6%;
+      animation-delay: -2s;
+    }
+    @keyframes softSwing {
+      0% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+      100% { transform: rotate(-2deg); }
+    }
+
+    /* Kartu utama */
+    .intro-card {
+      position: relative;
+      max-width: 780px;
+      width: 100%;
+      background: #fffffffa;
+      border-radius: 48px;
+      padding: 2.2rem 2rem;
+      box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(120, 150, 110, 0.15);
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    /* Hiasan atas */
+    .card-accent {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      padding: 0 1rem;
+      font-size: 0.8rem;
+      color: #7e9f7a;
+      font-family: monospace;
+      letter-spacing: 3px;
+      border-radius: 30px;
+      border: 1px solid #dde8d6;
+    }
+
+    /* Judul */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2b5a3a;
+      margin-bottom: 1rem;
+      border-left: 4px solid #bdd4b0;
+      padding-left: 1rem;
+    }
+
+    .content-block {
+      margin-bottom: 2rem;
+    }
+
+    .content-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #3c5a46;
+      text-align: justify;
+      margin-bottom: 1rem;
+    }
+
+    .quote {
+      font-style: italic;
+      background: #f4f9ef;
+      padding: 1rem 1.5rem;
+      border-radius: 24px;
+      color: #2b5a3a;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+      border-left: 3px solid #9fc0a4;
+    }
+
+    /* Tombol navigasi */
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn-nav {
+      background: #eef3e6;
+      border: 1px solid #c2d6b8;
+      padding: 0.7rem 1.8rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #2b5a3a;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .btn-nav:hover {
+      background: #e5eedc;
+      border-color: #aec6a2;
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    .footer-mild {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.7rem;
+      color: #9ab694;
+    }
+
+    /* Responsif */
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem;
+      }
+      .intro-card {
+        padding: 1.5rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .content-text {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-ornament"></div>
+  <div class="crescent-soft"></div>
+  <div class="lantern-soft"><i class="fas fa-lantern"></i></div>
+  <div class="lantern-soft lantern-soft-right"><i class="fas fa-lantern"></i></div>
+  <div id="starsContainer"></div>
+
+  <div class="intro-card">
+    <div class="card-accent">✧ ۞ ✧</div>
+
+    <div class="content-block">
+      <div class="section-title">Kata Pengantar</div>
+      <div class="content-text">
+        Alhamdulillah, puji syukur ke hadirat Allah Swt. yang telah memberikan kesempatan kepada saya untuk menyusun jurnal reflektif interaktif ini. Bulan Ramadhan yang penuh berkah menjadi momentum tepat untuk merenungkan nilai-nilai kebangsaan, keimanan, dan kepedulian sosial. Jurnal ini dirancang sebagai media refleksi bagi calon guru SD dalam mengintegrasikan nilai-nilai civic competencies (kompetensi kewarganegaraan) dengan pengalaman spiritual selama bulan suci.
+      </div>
+      <div class="content-text">
+        Saya mengucapkan terima kasih kepada dosen pengampu dan semua pihak yang telah mendukung tersusunnya jurnal ini. Semoga jurnal ini dapat menjadi sarana pengembangan karakter warga negara yang religius, nasionalis, dan berkeadaban.
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div class="section-title">Tujuan</div>
+      <div class="content-text">
+        Jurnal Reflektif Interaktif ini bertujuan untuk:
+      </div>
+      <div class="quote">
+        <i class="fas fa-check-circle" style="color: #5f8b6f; margin-right: 8px;"></i> 1. Membantu calon guru SD merefleksikan nilai-nilai karakter kebangsaan selama bulan Ramadhan.<br>
+        <i class="fas fa-check-circle" style="color: #5f8b6f; margin-right: 8px;"></i> 2. Menghubungkan pengalaman ibadah puasa dengan pembentukan kompetensi kewarganegaraan (civic competencies).<br>
+        <i class="fas fa-check-circle" style="color: #5f8b6f; margin-right: 8px;"></i> 3. Menyediakan ruang reflektif yang interaktif untuk mengembangkan kepribadian guru yang profesional dan berakhlak mulia.<br>
+        <i class="fas fa-check-circle" style="color: #5f8b6f; margin-right: 8px;"></i> 4. Menginspirasi pembelajaran PKN di SD yang kontekstual dan berbasis nilai-nilai Ramadan.
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div class="section-title">Isi Buku</div>
+      <div class="content-text">
+        Jurnal ini dirancang sebagai satu kesatuan pengalaman yang utuh, dimulai dengan Refleksi Harian Ramadan berupa lembar refleksi yang mendorong calon guru untuk secara mendalam menuliskan pengalaman spiritual mereka dan mengkaitkannya dengan penguatan karakter warga negara seperti kejujuran, kedisiplinan, empati, dan tanggung jawab, yang kemudian dilanjutkan dengan Aktivitas Civic Competencies melalui berbagai kegiatan interaktif berbasis masyarakat seperti aksi sosial, diskusi kelompok, dan pengamatan fenomena sosial selama Ramadan, sehingga pengalaman spiritual personal dapat diimplementasikan secara nyata dalam kehidupan bermasyarakat.
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="halaman1" class="btn-nav" id="backToIdentity">
+        <i class="fas fa-arrow-left"></i> Kembali
+      </a>
+      <a href="#" class="btn-nav" id="nextToJournal">
+        Mulai Jurnal <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="footer-mild">
+      <i class="fas fa-star-and-crescent"></i> Ramadan 1447 H · Refleksi & Kompetensi Kewarganegaraan
+    </div>
+  </div>
+
+  <script>
+    // Bintang latar
+    function createSoftStars() {
+      const container = document.getElementById('starsContainer');
+      if (!container) return;
+      container.innerHTML = '';
+      const count = window.innerWidth < 700 ? 60 : 100;
+      for (let i = 0; i < count; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star-soft');
+        const size = Math.random() * 2.2 + 1.2;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        star.style.animationDuration = `${Math.random() * 3 + 2.5}s`;
+        star.style.opacity = Math.random() * 0.3 + 0.1;
+        container.appendChild(star);
+      }
+    }
+
+    // Animasi masuk
+    function pageEntry() {
+      const card = document.querySelector('.intro-card');
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(18px)';
+      setTimeout(() => {
+        card.style.transition = 'all 0.65s cubic-bezier(0.2, 0.85, 0.3, 1)';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 40);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      createSoftStars();
+      pageEntry();
+
+      const backBtn = document.getElementById('backToIdentity');
+      const nextBtn = document.getElementById('nextToJournal');
+
+      if (backBtn) {
+        backBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          // Kembali ke halaman identitas (asumsi nama file identitas.html)
+          window.location.href = 'halaman2';
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          alert("Halaman jurnal harian akan segera hadir. Selamat merefleksikan!");
+          // Di sini bisa diarahkan ke halaman jurnal berikutnya
+          window.location.href = 'halaman4';
+        });
+      }
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        createSoftStars();
+      }, 200);
+    });
+  </script>
+</body>
+</html>

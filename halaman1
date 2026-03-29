@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ramadhan Membentuk Karakter Warga Negara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(125deg, #fafef7 0%, #eef3e6 100%);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .bg-ornament {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" opacity="0.04"><path fill="none" stroke="%234b7a5c" stroke-width="0.6" d="M200 200 L1000 200 M200 400 L1000 400 M200 600 L1000 600 M200 800 L1000 800 M400 200 L400 1000 M600 200 L600 1000 M800 200 L800 1000"/><circle cx="600" cy="600" r="180" fill="none" stroke="%234b7a5c" stroke-width="0.5"/></svg>');
+      background-repeat: repeat;
+      background-size: 80px;
+      z-index: 0;
+    }
+
+    .star-soft {
+      position: absolute;
+      background: #8bbf92;
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: gentleFloat 5s infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes gentleFloat {
+      0% { opacity: 0.1; transform: translateY(0px);}
+      100% { opacity: 0.35; transform: translateY(-4px);}
+    }
+
+    .crescent-soft {
+      position: absolute;
+      top: 6%;
+      right: 5%;
+      width: 90px;
+      height: 90px;
+      background: radial-gradient(circle at 35% 35%, #e4f0dc, #cae0bc);
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(100, 140, 90, 0.2);
+      z-index: 1;
+      opacity: 0.7;
+    }
+    .crescent-soft::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      width: 72px;
+      height: 72px;
+      background: #fafef7;
+      border-radius: 50%;
+    }
+
+    .lantern-soft {
+      position: absolute;
+      bottom: 5%;
+      left: 3%;
+      font-size: 2.2rem;
+      color: #9fc0a4;
+      filter: drop-shadow(0 0 4px rgba(100, 120, 80, 0.3));
+      animation: softSwing 6s ease-in-out infinite;
+      transform-origin: top center;
+      z-index: 1;
+      opacity: 0.6;
+    }
+    .lantern-soft-right {
+      left: auto;
+      right: 3%;
+      bottom: 6%;
+      animation-delay: -2s;
+    }
+    @keyframes softSwing {
+      0% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+      100% { transform: rotate(-2deg); }
+    }
+
+    .card-elegant {
+      position: relative;
+      max-width: 760px;
+      width: 100%;
+      background: #fffffffa;
+      border-radius: 48px;
+      padding: 2.8rem 2.2rem;
+      box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(120, 150, 110, 0.15);
+      z-index: 10;
+      text-align: center;
+    }
+
+    .card-accent {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      padding: 0 1rem;
+      font-size: 0.8rem;
+      color: #7e9f7a;
+      font-family: monospace;
+      letter-spacing: 3px;
+      border-radius: 30px;
+      border: 1px solid #dde8d6;
+    }
+
+    .message-panel {
+      background: #fefef9;
+      border-radius: 36px;
+      padding: 2rem 1.5rem;
+      margin: 0.5rem 0 1.8rem;
+      border: 1px solid #e7f0e0;
+      box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.05);
+    }
+
+    .first-message {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Cormorant Garamond', serif;
+      color: #2b5a3a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+    .first-message i {
+      font-size: 2rem;
+      color: #86a788;
+    }
+
+    .second-message {
+      font-size: 1.1rem;
+      font-weight: 500;
+      background: #f4f9ef;
+      display: inline-block;
+      padding: 0.7rem 1.6rem;
+      border-radius: 60px;
+      color: #3c6b49;
+    }
+    .second-message i {
+      margin-right: 8px;
+    }
+
+    .btn-soft {
+      background: #eef3e6;
+      border: 1px solid #c2d6b8;
+      padding: 0.85rem 2.2rem;
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      color: #2b5a3a;
+      border-radius: 50px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+    .btn-soft:hover {
+      background: #e5eedc;
+      border-color: #aec6a2;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.1);
+    }
+    .btn-soft i {
+      transition: transform 0.2s;
+    }
+    .btn-soft:hover i {
+      transform: translateX(4px);
+    }
+
+    .footer-mild {
+      font-size: 0.7rem;
+      margin-top: 2rem;
+      color: #9ab694;
+    }
+
+    @media (max-width: 640px) {
+      .card-elegant { padding: 1.8rem 1.2rem; }
+      .first-message { font-size: 1.6rem; gap: 8px; }
+      .first-message i { font-size: 1.5rem; }
+      .second-message { font-size: 0.9rem; padding: 0.5rem 1.2rem; }
+      .crescent-soft { width: 70px; height: 70px; top: 2%; right: 4%; }
+      .crescent-soft::after { width: 55px; height: 55px; top: -8px; left: 16px; }
+      .lantern-soft { font-size: 1.8rem; }
+      .message-panel { padding: 1.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-ornament"></div>
+  <div class="crescent-soft"></div>
+  <div class="lantern-soft"><i class="fas fa-lantern"></i></div>
+  <div class="lantern-soft lantern-soft-right"><i class="fas fa-lantern"></i></div>
+  <div id="starsContainer"></div>
+
+  <div class="card-elegant">
+    <div class="card-accent">✧ ۞ ✧</div>
+    <div class="message-panel">
+      <div class="first-message">
+        <i class="fas fa-star-and-crescent"></i>
+        <span>Ramadhan Membentuk Karakter Warga Negara</span>
+      </div>
+      <div class="second-message">
+        <i class="fas fa-chalkboard-user"></i> Jurnal Reflektif Interaktif Calon Guru SD Berbasis Civic Competencies
+      </div>
+    </div>
+    <!-- TOMBOL MENUJU HALAMAN 2 -->
+    <a href="halaman2" class="btn-soft" id="openJournalBtn">
+      <i class="fas fa-book-open"></i> Buka
+    </a>
+    <div class="footer-mild">
+      <i class="fas fa-star-and-crescent"></i> Ramadan Mubarak · Niatkan Ikhlas karena Allah <i class="fas fa-star-and-crescent"></i>
+    </div>
+  </div>
+
+  <script>
+    function createSoftStars() {
+      const container = document.getElementById('starsContainer');
+      if (!container) return;
+      container.innerHTML = '';
+      const count = window.innerWidth < 700 ? 60 : 100;
+      for (let i = 0; i < count; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star-soft');
+        const size = Math.random() * 2.2 + 1.2;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        star.style.animationDuration = `${Math.random() * 3 + 2.5}s`;
+        star.style.opacity = Math.random() * 0.3 + 0.1;
+        container.appendChild(star);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', createSoftStars);
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(createSoftStars, 200);
+    });
+  </script>
+</body>
+</html>

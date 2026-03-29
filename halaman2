@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Identitas | Jurnal Reflektif Interaktif</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(125deg, #fafef7 0%, #eef3e6 100%);
+      font-family: 'Inter', sans-serif;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    /* Latar belakang ornamen halus */
+    .bg-ornament {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" opacity="0.04"><path fill="none" stroke="%234b7a5c" stroke-width="0.6" d="M200 200 L1000 200 M200 400 L1000 400 M200 600 L1000 600 M200 800 L1000 800 M400 200 L400 1000 M600 200 L600 1000 M800 200 L800 1000"/><circle cx="600" cy="600" r="180" fill="none" stroke="%234b7a5c" stroke-width="0.5"/></svg>');
+      background-repeat: repeat;
+      background-size: 80px;
+      z-index: 0;
+    }
+
+    /* Bintang lembut */
+    .star-soft {
+      position: absolute;
+      background: #8bbf92;
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: gentleFloat 5s infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes gentleFloat {
+      0% { opacity: 0.1; transform: translateY(0px);}
+      100% { opacity: 0.35; transform: translateY(-4px);}
+    }
+
+    /* Bulan sabit minimal */
+    .crescent-soft {
+      position: absolute;
+      top: 6%;
+      right: 5%;
+      width: 90px;
+      height: 90px;
+      background: radial-gradient(circle at 35% 35%, #e4f0dc, #cae0bc);
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(100, 140, 90, 0.2);
+      z-index: 1;
+      opacity: 0.7;
+    }
+    .crescent-soft::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      width: 72px;
+      height: 72px;
+      background: #fafef7;
+      border-radius: 50%;
+    }
+
+    /* Lentera tipis */
+    .lantern-soft {
+      position: absolute;
+      bottom: 5%;
+      left: 3%;
+      font-size: 2.2rem;
+      color: #9fc0a4;
+      filter: drop-shadow(0 0 4px rgba(100, 120, 80, 0.3));
+      animation: softSwing 6s ease-in-out infinite;
+      transform-origin: top center;
+      z-index: 1;
+      opacity: 0.6;
+    }
+    .lantern-soft-right {
+      left: auto;
+      right: 3%;
+      bottom: 6%;
+      animation-delay: -2s;
+    }
+    @keyframes softSwing {
+      0% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+      100% { transform: rotate(-2deg); }
+    }
+
+    /* Kartu identitas */
+    .identity-card {
+      position: relative;
+      max-width: 780px;
+      width: 100%;
+      background: #fffffffa;
+      border-radius: 48px;
+      padding: 2.2rem 2rem;
+      box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(120, 150, 110, 0.15);
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    /* Hiasan atas */
+    .card-accent {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      padding: 0 1rem;
+      font-size: 0.8rem;
+      color: #7e9f7a;
+      font-family: monospace;
+      letter-spacing: 3px;
+      border-radius: 30px;
+      border: 1px solid #dde8d6;
+    }
+
+    /* Judul */
+    .book-title {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2b5a3a;
+      margin-bottom: 1.8rem;
+      border-bottom: 2px solid #e2eed8;
+      display: inline-block;
+      width: auto;
+      padding-bottom: 0.5rem;
+    }
+
+    .title-wrapper {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Layout dua kolom untuk foto dan info */
+    .profile-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-area {
+      flex: 0 0 160px;
+      text-align: center;
+    }
+
+    .photo-frame {
+      width: 150px;
+      height: 150px;
+      background: #f4f9ef;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 3px solid #cbe0c0;
+      box-shadow: 0 8px 16px -8px rgba(0,0,0,0.05);
+      margin: 0 auto;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-caption {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: #7c9a7c;
+    }
+
+    .info-area {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 1rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed #e2eed8;
+    }
+
+    .info-icon {
+      width: 32px;
+      color: #86a788;
+      font-size: 1.2rem;
+      text-align: center;
+      padding-top: 2px;
+    }
+
+    .info-text {
+      flex: 1;
+      color: #2c5a3c;
+      font-weight: 500;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: #1f4532;
+      margin-right: 0.5rem;
+    }
+
+    /* Tombol navigasi */
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn-nav {
+      background: #eef3e6;
+      border: 1px solid #c2d6b8;
+      padding: 0.7rem 1.8rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #2b5a3a;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .btn-nav:hover {
+      background: #e5eedc;
+      border-color: #aec6a2;
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    .footer-mild {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.7rem;
+      color: #9ab694;
+    }
+
+    /* Responsif */
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem;
+      }
+      .identity-card {
+        padding: 1.5rem;
+      }
+      .book-title {
+        font-size: 1.6rem;
+      }
+      .photo-frame {
+        width: 120px;
+        height: 120px;
+      }
+      .info-item {
+        gap: 8px;
+      }
+      .info-icon {
+        width: 28px;
+        font-size: 1rem;
+      }
+      .info-text {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-ornament"></div>
+  <div class="crescent-soft"></div>
+  <div class="lantern-soft"><i class="fas fa-lantern"></i></div>
+  <div class="lantern-soft lantern-soft-right"><i class="fas fa-lantern"></i></div>
+  <div id="starsContainer"></div>
+
+  <div class="identity-card">
+    <div class="card-accent">✧ ۞ ✧</div>
+
+    <div class="title-wrapper">
+      <div class="book-title">Jurnal Reflektif Interaktif</div>
+      <div style="font-size: 0.9rem; color: #5f8b6f; margin-top: 0.2rem;">Ramadhan Membentuk Karakter Warga Negara</div>
+    </div>
+
+    <div class="profile-row">
+      <div class="photo-area">
+        <div class="photo-frame">
+          <!-- GAMBAR ASLI: menggunakan foto contoh dari Random User API (bisa diganti dengan foto asli) -->
+          <img src="foto.png" alt="Foto Mahasiswa">
+        </div>
+        <div class="photo-caption">Pratiwi Tarida</div>
+      </div>
+
+      <div class="info-area">
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-id-card"></i></div>
+          <div class="info-text"><span class="info-label">Nama:</span> Pratiwi Tarida</div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-qrcode"></i></div>
+          <div class="info-text"><span class="info-label">NIM:</span> 2403348</div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-chalkboard"></i></div>
+          <div class="info-text"><span class="info-label">Mata Kuliah:</span> Pembelajaran PKN di SD</div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-user-tie"></i></div>
+          <div class="info-text"><span class="info-label">Dosen Pengampu:</span> Dr. Nurdinah Hanifah, M.Pd.</div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-university"></i></div>
+          <div class="info-text"><span class="info-label">Program Studi:</span> S1 Pendidikan Guru Sekolah Dasar</div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-university"></i></div>
+          <div class="info-text"><span class="info-label">Universitas:</span> Universitas Pendidikan Indonesia</div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-calendar-alt"></i></div>
+          <div class="info-text"><span class="info-label">Tahun Akademik:</span> 2024</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="#" class="btn-nav" id="backToHome">
+        <i class="fas fa-arrow-left"></i> Kembali
+      </a>
+      <a href="#" class="btn-nav" id="nextPage">
+        Selanjutnya <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="footer-mild">
+      <i class="fas fa-star-and-crescent"></i> Semester Genap · Berbasis Civic Competencies
+    </div>
+  </div>
+
+  <script>
+    // Bintang latar
+    function createSoftStars() {
+      const container = document.getElementById('starsContainer');
+      if (!container) return;
+      container.innerHTML = '';
+      const count = window.innerWidth < 700 ? 60 : 100;
+      for (let i = 0; i < count; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star-soft');
+        const size = Math.random() * 2.2 + 1.2;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        star.style.animationDuration = `${Math.random() * 3 + 2.5}s`;
+        star.style.opacity = Math.random() * 0.3 + 0.1;
+        container.appendChild(star);
+      }
+    }
+
+    // Animasi masuk
+    function pageEntry() {
+      const card = document.querySelector('.identity-card');
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(18px)';
+      setTimeout(() => {
+        card.style.transition = 'all 0.65s cubic-bezier(0.2, 0.85, 0.3, 1)';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 40);
+    }
+
+    // Navigasi (disesuaikan dengan kebutuhan)
+    document.addEventListener('DOMContentLoaded', () => {
+      createSoftStars();
+      pageEntry();
+
+      const backBtn = document.getElementById('backToHome');
+      const nextBtn = document.getElementById('nextPage');
+
+      if (backBtn) {
+        backBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.location.href = 'halaman1'; // asumsi halaman utama bernama index.html
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.location.href = 'halaman3';
+          // Di sini bisa diarahkan ke halaman jurnal berikutnya
+          // window.location.href = 'jurnal.html';
+        });
+      }
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        createSoftStars();
+      }, 200);
+    });
+  </script>
+</body>
+</html>

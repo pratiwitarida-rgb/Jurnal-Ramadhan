@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Refleksi Harian | Jurnal Ramadan</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(125deg, #fafef7 0%, #eef3e6 100%);
+      font-family: 'Inter', sans-serif;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    .bg-ornament {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" opacity="0.04"><path fill="none" stroke="%234b7a5c" stroke-width="0.6" d="M200 200 L1000 200 M200 400 L1000 400 M200 600 L1000 600 M200 800 L1000 800 M400 200 L400 1000 M600 200 L600 1000 M800 200 L800 1000"/><circle cx="600" cy="600" r="180" fill="none" stroke="%234b7a5c" stroke-width="0.5"/></svg>');
+      background-repeat: repeat;
+      background-size: 80px;
+      z-index: 0;
+    }
+
+    .star-soft {
+      position: absolute;
+      background: #8bbf92;
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: gentleFloat 5s infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes gentleFloat {
+      0% { opacity: 0.1; transform: translateY(0px);}
+      100% { opacity: 0.35; transform: translateY(-4px);}
+    }
+
+    .crescent-soft {
+      position: absolute;
+      top: 6%;
+      right: 5%;
+      width: 90px;
+      height: 90px;
+      background: radial-gradient(circle at 35% 35%, #e4f0dc, #cae0bc);
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(100, 140, 90, 0.2);
+      z-index: 1;
+      opacity: 0.7;
+    }
+    .crescent-soft::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      width: 72px;
+      height: 72px;
+      background: #fafef7;
+      border-radius: 50%;
+    }
+
+    .lantern-soft {
+      position: absolute;
+      bottom: 5%;
+      left: 3%;
+      font-size: 2.2rem;
+      color: #9fc0a4;
+      filter: drop-shadow(0 0 4px rgba(100, 120, 80, 0.3));
+      animation: softSwing 6s ease-in-out infinite;
+      transform-origin: top center;
+      z-index: 1;
+      opacity: 0.6;
+    }
+    .lantern-soft-right {
+      left: auto;
+      right: 3%;
+      bottom: 6%;
+      animation-delay: -2s;
+    }
+    @keyframes softSwing {
+      0% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+      100% { transform: rotate(-2deg); }
+    }
+
+    .reflection-page {
+      position: relative;
+      max-width: 880px;
+      width: 100%;
+      background: #fffffffa;
+      border-radius: 48px;
+      padding: 2rem 2rem 2rem;
+      box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(120, 150, 110, 0.15);
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .card-accent {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      padding: 0 1rem;
+      font-size: 0.8rem;
+      color: #7e9f7a;
+      font-family: monospace;
+      letter-spacing: 3px;
+      border-radius: 30px;
+      border: 1px solid #dde8d6;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #2b5a3a;
+      margin: 0.5rem 0 0.8rem;
+      text-align: center;
+    }
+
+    .civic-disposition {
+      background: #f4f9ef;
+      border-radius: 60px;
+      padding: 0.6rem 1.2rem;
+      display: inline-block;
+      width: auto;
+      margin: 0 auto 1.8rem;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #2b5a3a;
+      border: 1px solid #cbe0c0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+
+    .civic-disposition i {
+      margin-right: 8px;
+      color: #5f8b6f;
+    }
+
+    .two-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .reflection-col {
+      flex: 1;
+      min-width: 240px;
+      background: #fefef9;
+      border-radius: 28px;
+      padding: 1.2rem;
+      border: 1px solid #e7f0e0;
+      transition: all 0.2s;
+    }
+
+    .image-col {
+      flex: 1;
+      min-width: 240px;
+      background: #fefef9;
+      border-radius: 28px;
+      padding: 1.2rem;
+      border: 1px solid #e7f0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2b5a3a;
+      margin-bottom: 1rem;
+      border-left: 3px solid #bdd4b0;
+      padding-left: 0.75rem;
+    }
+
+    .section-subtitle i {
+      margin-right: 8px;
+      color: #86a788;
+    }
+
+    .example-ref {
+      background: #f9fdf4;
+      padding: 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: #3c5a46;
+      font-style: italic;
+      margin-bottom: 1rem;
+      border-left: 3px solid #bdd4b0;
+    }
+
+    textarea {
+      width: 100%;
+      border-radius: 24px;
+      border: 1px solid #dde8d6;
+      padding: 0.8rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      background: white;
+      resize: vertical;
+      transition: 0.2s;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #9fc0a4;
+      box-shadow: 0 0 0 2px rgba(95, 139, 111, 0.1);
+    }
+
+    .image-slot {
+      text-align: center;
+      width: 100%;
+    }
+
+    .image-slot img {
+      width: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+      border: 1px solid #e2eed8;
+      max-height: 200px;
+      box-shadow: 0 6px 12px -8px rgba(0,0,0,0.1);
+    }
+
+    .pull-tab-container {
+      margin: 1rem 0 1.5rem;
+      border-radius: 28px;
+      background: #f4f9ef;
+      overflow: hidden;
+      border: 1px solid #e2eed8;
+    }
+
+    .tab-handle {
+      background: #eef3e6;
+      padding: 1rem 1.2rem;
+      font-weight: 600;
+      color: #2b5a3a;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.2s;
+      border-bottom: 1px solid #e2eed8;
+    }
+
+    .tab-handle:hover {
+      background: #e5eedc;
+    }
+
+    .tab-handle i {
+      transition: transform 0.3s;
+    }
+
+    .tab-handle.open i {
+      transform: rotate(180deg);
+    }
+
+    .tab-content {
+      padding: 1rem 1.5rem;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    .tab-content.hidden {
+      display: none;
+    }
+
+    .tab-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2b5a3a;
+      margin: 0.8rem 0 0.5rem;
+    }
+
+    .tab-content ul {
+      margin-left: 1.5rem;
+      color: #3c5a46;
+      line-height: 1.5;
+    }
+
+    .tab-content li {
+      margin: 0.4rem 0;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn-nav {
+      background: #eef3e6;
+      border: 1px solid #c2d6b8;
+      padding: 0.7rem 1.8rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #2b5a3a;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .btn-nav:hover {
+      background: #e5eedc;
+      border-color: #aec6a2;
+      transform: translateY(-1px);
+    }
+
+    .footer-mild {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.7rem;
+      color: #9ab694;
+    }
+
+    @media (max-width: 680px) {
+      body {
+        padding: 1rem;
+      }
+      .reflection-page {
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .civic-disposition {
+        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-ornament"></div>
+  <div class="crescent-soft"></div>
+  <div class="lantern-soft"><i class="fas fa-lantern"></i></div>
+  <div class="lantern-soft lantern-soft-right"><i class="fas fa-lantern"></i></div>
+  <div id="starsContainer"></div>
+
+  <div class="reflection-page">
+    <div class="card-accent">✧ ۞ ✧</div>
+
+    <h1>Refleksi Penutup – Harapan Untuk Kedepan</h1>
+
+    <div class="two-columns">
+      <!-- Kolom Refleksi -->
+      <div class="reflection-col">
+        <div class="section-subtitle">
+        </div>
+        <div class="example-ref" style="text-align: justify;">
+          <i class="fas fa-quote-left" style="margin-right: 6px; color: #86a788;"></i> 
+          "Ramadhan tahun ini bukan sekadar meninggalkan kenangan, tetapi juga meninggalkan bekas yang harus saya jaga. Saya berharap semangat disiplin, empati, dan tanggung jawab yang telah saya latih selama satu bulan penuh tidak pudar setelah bulan suci berlalu; komitmen saya adalah menjadikan kebiasaan baik ini sebagai gaya hidup, bukan sekadar rutinitas musiman. Sebagai warga negara, saya akan terus berkontribusi dalam lingkungan masyarakat dengan menjadi pribadi yang toleran, peduli, dan aktif dalam kegiatan sosial. Sebagai calon guru SD, saya bertekad menanamkan nilai-nilai kewarganegaraan yang saya peroleh kepada siswa-siswa kelak bukan melalui ceramah, tetapi melalui keteladanan dan pembelajaran kontekstual yang menyentuh hati. Ramadhan telah mengajarkan bahwa perubahan dimulai dari diri sendiri, dan saya akan menjadi bagian dari perubahan itu, satu langkah kecil, satu karakter, satu generasi pada satu waktu."
+        </div>
+        <!-- Teks bantuan di bawah textarea telah dihapus -->
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="halaman3" class="btn-nav" id="backBtn">
+        <i class="fas fa-arrow-left"></i> Kembali
+      </a>
+      <a href="" class="btn-nav" id="nextBtn">
+        Home <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+    <div class="footer-mild">
+      <i class="fas fa-star-and-crescent"></i> Jurnal Reflektif · Membangun Karakter Warga Negara
+    </div>
+  </div>
+
+  <script>
+    function createSoftStars() {
+      const container = document.getElementById('starsContainer');
+      if (!container) return;
+      container.innerHTML = '';
+      const count = window.innerWidth < 700 ? 60 : 100;
+      for (let i = 0; i < count; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star-soft');
+        const size = Math.random() * 2.2 + 1.2;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        star.style.animationDuration = `${Math.random() * 3 + 2.5}s`;
+        star.style.opacity = Math.random() * 0.3 + 0.1;
+        container.appendChild(star);
+      }
+    }
+
+    function pageEntry() {
+      const card = document.querySelector('.reflection-page');
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(18px)';
+      setTimeout(() => {
+        card.style.transition = 'all 0.65s cubic-bezier(0.2, 0.85, 0.3, 1)';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 40);
+    }
+
+    function initPullTab() {
+      const handle = document.getElementById('tabHandle');
+      const content = document.getElementById('tabContent');
+      if (!handle || !content) return;
+
+      handle.addEventListener('click', () => {
+        content.classList.toggle('hidden');
+        handle.classList.toggle('open');
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      createSoftStars();
+      pageEntry();
+      initPullTab();
+
+      const backBtn = document.getElementById('backBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      if (backBtn) {
+        backBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.location.href = 'halaman18';
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.location.href = 'halaman1';
+        });
+      }
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        createSoftStars();
+      }, 200);
+    });
+  </script>
+</body>
+</html>
